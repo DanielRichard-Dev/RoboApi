@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoboApi", "RoboApi\RoboApi.csproj", "{9EB801F6-BCDC-4C81-8167-6FF3E17BE6CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboModels", "RoboModels\RoboModels.csproj", "{712EDE59-FAC9-453F-B57F-6A4EC5EA77AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboServices", "RoboServices\RoboServices.csproj", "{F36BD6F5-1BFA-4467-BB8C-804EC9B878F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EB801F6-BCDC-4C81-8167-6FF3E17BE6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB801F6-BCDC-4C81-8167-6FF3E17BE6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB801F6-BCDC-4C81-8167-6FF3E17BE6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB801F6-BCDC-4C81-8167-6FF3E17BE6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712EDE59-FAC9-453F-B57F-6A4EC5EA77AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712EDE59-FAC9-453F-B57F-6A4EC5EA77AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712EDE59-FAC9-453F-B57F-6A4EC5EA77AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712EDE59-FAC9-453F-B57F-6A4EC5EA77AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36BD6F5-1BFA-4467-BB8C-804EC9B878F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36BD6F5-1BFA-4467-BB8C-804EC9B878F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36BD6F5-1BFA-4467-BB8C-804EC9B878F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36BD6F5-1BFA-4467-BB8C-804EC9B878F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66F96F0F-4C8B-46E8-8B95-113AD9EB3CF7}
+	EndGlobalSection
+EndGlobal
