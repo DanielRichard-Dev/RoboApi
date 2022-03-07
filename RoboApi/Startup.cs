@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 
 namespace RoboApi
 {
@@ -26,6 +27,22 @@ namespace RoboApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "Robô API",
+                        Version = "v1",
+                        Description = "Exemplo de API REST criada com o ASP.NET Core",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Daniel Richard",
+                            Url = new Uri("https://github.com/DanielRichard-Dev")
+                        }
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +60,14 @@ namespace RoboApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("v1/swagger.json",
+                    "Robô API");
+            });
         }
     }
 }

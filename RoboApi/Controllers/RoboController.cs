@@ -21,7 +21,6 @@ namespace RoboApi.Controllers
             _roboService = new RoboService();
         }
 
-        // GET api/values
         [HttpGet]
         public ActionResult<RoboApiModel> IniciarRobo()
         {
