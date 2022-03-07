@@ -6,7 +6,7 @@ namespace RoboModels.RoboModels
     {
         public RoboModel()
         {
-            Braco = new List<RoboBracoModel>();
+            Bracos = new List<RoboBracoModel>();
         }
 
         public bool CabecaRotacaoMenosNoventa { get; set; }
@@ -17,6 +17,6 @@ namespace RoboModels.RoboModels
         public bool CabecaInclinacaoCima { get; set; }
         public bool CabecaInclinacaoRepouso { get; set; } = true;
         public bool CabecaInclinacaoBaixo { get; set; }
-        public List<RoboBracoModel> Braco { get; set; }
+        public List<RoboBracoModel> Bracos { get; set; }
     }
 }

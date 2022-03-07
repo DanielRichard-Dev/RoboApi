@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RoboModels.RoboEnum;
 using RoboModels.RoboModels;
 using RoboServices.RoboInterfaces;
 using RoboServices.RoboServices;
@@ -22,13 +23,28 @@ namespace RoboApi.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<RoboModel> IniciarRobo()
+        public ActionResult<RoboApiModel> IniciarRobo()
         {
             try
             {
-                var robo = _roboService.InicializarRobo();
+                var robo = _roboService.CarregarRobo();
 
-                return Ok(new { RoboModel = robo });
+                return Ok(robo);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Ërro ao iniciar robô");
+            }
+        }
+
+        [HttpPut("movimentarbraco")]
+        public ActionResult<RoboApiModel> MovimentarBracoRobo([FromBody]RoboApiModel roboRequest)
+        {
+            try
+            {
+                var robo = _roboService.MovimentarBracoRobo(roboRequest);
+
+                return Ok(roboRequest);
             }
             catch (Exception)
             {

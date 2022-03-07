@@ -6,10 +6,10 @@ namespace RoboServices.RoboInterfaces
     {
         bool AcionarAcaoRobo();
 
-
         bool RemoverAcaoRobo();
 
+        RoboApiModel CarregarRobo();
 
-        RoboModel InicializarRobo();
+        RoboApiModel MovimentarBracoRobo(RoboApiModel robo);
     }
 }

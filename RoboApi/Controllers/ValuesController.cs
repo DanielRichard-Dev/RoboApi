@@ -16,7 +16,7 @@ namespace RoboApi.Controllers
         {
             var _roboService = new RoboServices.RoboServices.RoboService();
 
-            var robo = _roboService.InicializarRobo();
+            var robo = _roboService.CarregarRobo();
             return new string[] { "value1", "value2" };
         }
 
