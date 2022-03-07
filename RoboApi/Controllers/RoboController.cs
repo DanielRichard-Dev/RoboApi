@@ -33,7 +33,7 @@ namespace RoboApi.Controllers
             }
             catch (Exception)
             {
-                return BadRequest("Ërro ao iniciar robô");
+                return BadRequest("Erro ao iniciar robô");
             }
         }
 
@@ -48,33 +48,23 @@ namespace RoboApi.Controllers
             }
             catch (Exception)
             {
-                return BadRequest("Ërro ao iniciar robô");
+                return BadRequest("Erro ao movimentar robô");
             }
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpPut("movimentarcabeca")]
+        public ActionResult<RoboApiModel> MovimentarCabecaRobo([FromBody]RoboApiModel roboRequest)
         {
-            return "value";
-        }
+            try
+            {
+                var robo = _roboService.MovimentarCabecaRobo(roboRequest);
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+                return Ok(roboRequest);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao movimentar robô");
+            }
         }
     }
 }

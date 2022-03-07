@@ -35,6 +35,13 @@ namespace RoboServices.RoboServices
             return roboResponse;
         }
 
+        public RoboApiModel MovimentarCabecaRobo(RoboApiModel robo)
+        {
+            var roboResponse = AtivarMovimentacaoCabecaRobo(robo);
+
+            return roboResponse;
+        }
+
         private RoboApiModel AtivarMovimentacaoBracoRobo(RoboApiModel robo)
         {
             foreach (var bracosRobo in robo.Robo.Bracos)
@@ -199,6 +206,59 @@ namespace RoboServices.RoboServices
                     }
                 }
             }      
+
+            return robo;
+        }
+
+        private RoboApiModel AtivarMovimentacaoCabecaRobo(RoboApiModel robo)
+        {
+            switch (robo.RoboCodigoMovimentoCabeca)
+            {
+                case RoboCodigoMovimentoCabecaEnum.CabecaRotacaoMenosNoventa:
+                    robo.Robo.CabecaRotacaoMenosNoventa = true;
+                    robo.Robo.CabecaRotacaoMenosQuarentaCinco = false;
+
+                    break;
+                case RoboCodigoMovimentoCabecaEnum.CabecaRotacaoMenosQuarentaCinco:
+                    robo.Robo.CabecaRotacaoMenosQuarentaCinco = true;
+                    robo.Robo.CabecaRotacaoMenosNoventa = false;
+                    robo.Robo.CabecaRotacaoRepouso = false;
+
+                    break;
+                case RoboCodigoMovimentoCabecaEnum.CabecaRotacaoRepouso:
+                    robo.Robo.CabecaRotacaoRepouso = true;
+                    robo.Robo.CabecaRotacaoMenosQuarentaCinco = false;
+                    robo.Robo.CabecaRotacaoQuarencaCinco = false;
+
+                    break;
+                case RoboCodigoMovimentoCabecaEnum.CabecaRotacaoQuarentaCinco:
+                    robo.Robo.CabecaRotacaoQuarencaCinco = true;
+                    robo.Robo.CabecaRotacaoRepouso = false;
+                    robo.Robo.CabecaRotacaoNoventa = false;
+
+                    break;
+                case RoboCodigoMovimentoCabecaEnum.CabecaRotacaoNoventa:
+                    robo.Robo.CabecaRotacaoNoventa = true;
+                    robo.Robo.CabecaRotacaoQuarencaCinco = false;
+
+                    break;
+                case RoboCodigoMovimentoCabecaEnum.CabecaInclinacaoCima:
+                    robo.Robo.CabecaInclinacaoCima = true;
+                    robo.Robo.CabecaInclinacaoRepouso = false;
+
+                    break;
+                case RoboCodigoMovimentoCabecaEnum.CabecaInclinacaoRepouso:
+                    robo.Robo.CabecaInclinacaoRepouso = true;
+                    robo.Robo.CabecaInclinacaoCima = false;
+                    robo.Robo.CabecaInclinacaoBaixo = false;
+
+                    break;
+                case RoboCodigoMovimentoCabecaEnum.CabecaInclinacaoBaixo:
+                    robo.Robo.CabecaInclinacaoBaixo = true;
+                    robo.Robo.CabecaInclinacaoRepouso = false;
+
+                    break;
+            }
 
             return robo;
         }

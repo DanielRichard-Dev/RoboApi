@@ -11,5 +11,7 @@ namespace RoboServices.RoboInterfaces
         RoboApiModel CarregarRobo();
 
         RoboApiModel MovimentarBracoRobo(RoboApiModel robo);
+
+        RoboApiModel MovimentarCabecaRobo(RoboApiModel robo);
     }
 }
