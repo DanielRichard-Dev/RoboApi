@@ -100,7 +100,7 @@ namespace RoboServices.RoboServices
                         case RoboCodigoMovimentoBracoEnum.PulsoEsquerdoRotacaoNoventa:
                                 bracosRobo.PulsoRotacaoNoventa = true;
                                 bracosRobo.PulsoRotacaoQuarentaCinco = false;
-                                bracosRobo.PulsoRotacaoCemOitenta = false;
+                                bracosRobo.PulsoRotacaoCemTrintaCinco = false;
 
                             break;
 
@@ -180,7 +180,7 @@ namespace RoboServices.RoboServices
                         case RoboCodigoMovimentoBracoEnum.PulsoDireitoRotacaoNoventa:
                             bracosRobo.PulsoRotacaoNoventa = true;
                             bracosRobo.PulsoRotacaoQuarentaCinco = false;
-                            bracosRobo.PulsoRotacaoCemOitenta = false;
+                            bracosRobo.PulsoRotacaoCemTrintaCinco = false;
 
                             break;
 
